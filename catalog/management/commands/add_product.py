@@ -13,6 +13,5 @@ class Command(BaseCommand):
         Category.objects.all().delete()
 
         # Загрузка данный из фикстур
-        call_command("loaddata", "categories_fixture.json")
-        call_command("loaddata", "products_fixture.json")
+        call_command("loaddata", "catalog_fixture.json")
         self.stdout.write(self.style.SUCCESS("Successfully loaded data from fixture files"))
