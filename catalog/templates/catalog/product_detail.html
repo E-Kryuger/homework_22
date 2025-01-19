@@ -7,38 +7,28 @@
 <div class="row">
     <!-- Левая колонка (отступ) -->
     <div class="col-1"></div>
-    <!-- Карточка -->
-    <div class="col-10">
-        <div class="card mb-4 box-shadow">
+
+        <!-- Карточка -->
+        <div class="card text-center">
             <!-- Заголовок карточки -->
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal text-center">{{ product.name }}</h4>
             </div>
+            <!-- Контент карточки -->
             <div class="card-body">
-                <div class="row">
-                    <!-- Левый отступ -->
-                    <div class="col-2"></div>
-                    <!-- Контент карточки -->
-                    <div class="col-8">
-                        <p class="mb-1"><b>Товар категории '{{ product.category }}':</b> {{ product.description }}</p>
-                        {% if product.image %}
-                            <img src="{{ product.image|media_filter }}" class="img-fluid" alt="{{ product.name }}" style="border-radius: 20px; height: 200px;">
-                        {% else %}
-                            <img src="/media/catalog/images/developed_by.png" class="img-fluid" alt="{{ product.name }}" style="border-radius: 20px; height: 200px;">
-                        {% endif %}
-                        <div class="row">
-                            <div class="col-4 mt-2"><h3><b>Цена:</b> ${{ product.price }}</h3></div>
-                            <div class="col-8 text-end mt-1"><p><b>Дата последнего изменения:</b> {{ product.updated_at|date:"d.m.Y" }}</p></div>
-                        </div>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
-                    </div>
-                    <!-- Правый отступ -->
-                    <div class="col-2"></div>
-                </div>
+                <img src="{{ product.image|media_filter }}" alt="{{ product.name }}" style="height: 200px;">
+                <h5 class="card-title">Категория: {{ product.category }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+            </div>
+            <!-- Футер -->
+            <div class="card-footer text-body-secondary">
+                <b>Дата последнего изменения:</b> {{ product.updated_at|date:"d.m.Y" }}
             </div>
         </div>
-    </div>
+</div>
+
     <!-- Правая колонка (отступ) -->
     <div class="col-1"></div>
-</div>
+
 {% endblock %}
