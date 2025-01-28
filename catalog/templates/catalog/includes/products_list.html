@@ -3,7 +3,7 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for product in products %}
+            {% for product in product_list %}
             <div class="col">
                 <div class="card shadow-sm">
                     <img src="{{ product.image|media_filter }}" alt="{{ product.name }}">
@@ -21,25 +21,3 @@
         </div>
     </div>
 </div>
-
-
-<!--<div class="row">-->
-<!--    {% for product in products %}-->
-<!--        <div class="col-4">-->
-<!--            <div class="card mb-4 box-shadow">-->
-<!--                <div class="card-header">-->
-<!--                    <h4 class="my-0 font-weight-normal">-->
-<!--                    <a href="/product-detail/{{ product.pk }}/" class="text-dark text-decoration-none">-->
-<!--                        {{ product.name|truncatechars:35 }}-->
-<!--                    </a>-->
-<!--                    </h4>-->
-<!--                </div>-->
-<!--                <div class="card-body">-->
-<!--                    <h1 class="card-title pricing-card-title">${{ product.price }}</h1>-->
-<!--                    <p>{{ product.description|truncatechars:100 }}</p>-->
-<!--                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    {% endfor %}-->
-<!--</div>-->

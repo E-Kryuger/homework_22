@@ -1,5 +1,10 @@
 {% extends "catalog/base.html" %}
 {% block title %}Контакты · Skystore{% endblock %}
+
+{% block header %}
+{% include "catalog/includes/navbar.html" %}
+{% endblock %}
+
 {% block content %}
 {% include "catalog/includes/header.html" with title="Контакты" %}
 <div class="row text-start">
@@ -22,6 +27,12 @@
                     </tr>
                 </table>
             </div>
+        </div>
+        <!-- Сообщение об успешном заполнении формы -->
+        <div class="mt-5 text-center">
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
         </div>
     </div>
      <!-- Форма обратной связи -->
