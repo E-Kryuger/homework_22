@@ -2,6 +2,7 @@ from django.http import Http404
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Article
+from .forms import ArticleForm
 
 
 class ArticleListView(ListView):
@@ -37,7 +38,8 @@ class ArticleDetailView(DetailView):
 
 class ArticleCreateView(CreateView):
     model = Article
-    fields = ["title", "body", "preview"]
+    form_class = ArticleForm
+    # fields = ["title", "body", "preview"]
     success_url = reverse_lazy("blog:article_list", kwargs={"status": "publications"})
 
     def form_valid(self, form):
@@ -48,7 +50,8 @@ class ArticleCreateView(CreateView):
 
 class ArticleUpdateView(UpdateView):
     model = Article
-    fields = ["title", "body", "preview"]
+    form_class = ArticleForm
+    # fields = ["title", "body", "preview"]
     success_url = reverse_lazy("blog:article_list", kwargs={"status": "publications"})
 
     def form_valid(self, form):
