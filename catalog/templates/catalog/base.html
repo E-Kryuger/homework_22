@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
 <body>
-
 {% block header %}{% endblock %}
 
 <div class="container">
     <!-- Основной контент -->
     {% block content %}{% endblock %}
+
     <!-- Подвал страницы -->
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
-                 <a class="text-decoration-none text-reset" href="/">SkyStore</a>
+                <a class="text-decoration-none text-reset" href="/home">SkyStore</a>
                 <small class="d-block mb-3 text-muted">&copy; 2024</small>
             </div>
             <div class="col-6 col-md">
@@ -47,6 +47,6 @@
     </footer>
 </div>
 <!-- Подключение Bootstrap JS -->
-<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
