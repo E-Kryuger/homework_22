@@ -24,8 +24,20 @@
                 <img src="{{ product.image|media_filter }}" alt="{{ product.name }}" style="height: 200px;">
                 <h5 class="card-title">Категория: {{ product.category }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <a class="p-2 btn btn-outline-primary" href="/product-update/{{ product.pk }}/">Редактировать</a>
-                <a class="p-2 btn btn-outline-danger" href="/product-delete/{{ product.pk }}/">Удалить</a>
+                <!-- Блок кнопок -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                    {% if perms.catalog.can_unpublish_product %}
+                        {% if product.is_published %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="action" value="unpublish" class="btn btn-outline-danger">Отменить публикацию</button>
+                        </form>
+                        {% endif %}
+                    {% else %}
+                        <a class="p-2 btn btn-outline-primary" href="/product-update/{{ product.pk }}/">Редактировать</a>
+                    {% endif %}
+                    <a class="p-2 btn btn-outline-danger" href="/product-delete/{{ product.pk }}/">Удалить</a>
+                </div>
             </div>
             <!-- Футер -->
             <div class="card-footer text-body-secondary">
