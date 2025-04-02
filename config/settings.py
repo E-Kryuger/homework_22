@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "catalog",
     "blog",
+    "users",
+    "phonenumber_field",
 ]
 
 MIDDLEWARE = [
@@ -136,4 +138,18 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+AUTH_USER_MODEL = "users.User"
 
+LOGIN_REDIRECT_URL = "/home/"
+LOGOUT_REDIRECT_URL = "/home/"
+
+LOGIN_URL = "users:login"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = "evgeniya_kryuger@mail.ru"
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

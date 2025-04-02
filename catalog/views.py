@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 
 from .forms import ProductForm
 from catalog.models import Product, Contact
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class HomeListView(ListView):
@@ -58,22 +59,22 @@ class CategoryProductsListView(ListView):
         return context
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy("catalog:home")
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy("catalog:home")
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy("catalog:home")
