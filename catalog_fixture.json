@@ -32,8 +32,10 @@
         "image": "",
         "category": 3,
         "price": "100.00",
+        "owner": 2,
         "created_at": "2025-01-08T20:29:19.710Z",
-        "updated_at": "2025-01-08T20:29:19.710Z"
+        "updated_at": "2025-01-08T20:29:19.710Z",
+        "is_published": true
     }
 },
 {
@@ -45,8 +47,10 @@
         "image": "",
         "category": 3,
         "price": "110.00",
+        "owner": 2,
         "created_at": "2025-01-08T20:31:08.646Z",
-        "updated_at": "2025-01-08T20:31:08.646Z"
+        "updated_at": "2025-01-08T20:31:08.646Z",
+        "is_published": true
     }
 },
 {
@@ -58,8 +62,10 @@
         "image": "",
         "category": 3,
         "price": "150.00",
+        "owner": 2,
         "created_at": "2025-01-08T20:32:16.174Z",
-        "updated_at": "2025-01-08T21:18:49.167Z"
+        "updated_at": "2025-01-08T21:18:49.167Z",
+        "is_published": false
     }
 },
 {
@@ -71,8 +77,10 @@
         "image": "catalog/images/bot.png",
         "category": 4,
         "price": "50.00",
+        "owner": 3,
         "created_at": "2025-01-08T20:38:17.134Z",
-        "updated_at": "2025-01-08T20:38:17.134Z"
+        "updated_at": "2025-01-08T20:38:17.134Z",
+        "is_published": true
     }
 },
 {
@@ -84,8 +92,10 @@
         "image": "catalog/images/mailing_lists.png",
         "category": 5,
         "price": "140.00",
+        "owner": 4,
         "created_at": "2025-01-08T20:42:22.718Z",
-        "updated_at": "2025-01-08T20:42:22.718Z"
+        "updated_at": "2025-01-08T20:42:22.718Z",
+        "is_published": true
     }
 },
 {
@@ -97,8 +107,10 @@
         "image": "catalog/images/bot_weather.png",
         "category": 4,
         "price": "10.00",
+        "owner": 3,
         "created_at": "2025-01-08T21:38:38.123Z",
-        "updated_at": "2025-01-08T21:38:38.123Z"
+        "updated_at": "2025-01-08T21:38:38.123Z",
+        "is_published": false
     }
 }
 ]
