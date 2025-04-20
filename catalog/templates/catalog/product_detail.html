@@ -1,0 +1,52 @@
+<!-- Шаблон для отображения страницы с подробной информацией о товаре -->
+{% extends "catalog/base.html" %}
+{% load my_tags %}
+{% block title %}{{ product.name }} · Skystore{% endblock %}
+
+{% block header %}
+{% include "catalog/includes/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "catalog/includes/header.html" with title="Skystore" %}
+<div class="row">
+    <!-- Левая колонка (отступ) -->
+    <div class="col-1"></div>
+
+        <!-- Карточка -->
+        <div class="card text-center">
+            <!-- Заголовок карточки -->
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal text-center">{{ product.name }}</h4>
+            </div>
+            <!-- Контент карточки -->
+            <div class="card-body">
+                <img src="{{ product.image|media_filter }}" alt="{{ product.name }}" style="height: 200px;">
+                <h5 class="card-title">Категория: {{ product.category }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <!-- Блок кнопок -->
+                <div class="d-flex justify-content-start gap-2 mt-3">
+                    {% if perms.catalog.can_unpublish_product %}
+                        {% if product.is_published %}
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="action" value="unpublish" class="btn btn-outline-danger">Отменить публикацию</button>
+                        </form>
+                        {% endif %}
+                    {% else %}
+                        <a class="p-2 btn btn-outline-primary" href="/product-update/{{ product.pk }}/">Редактировать</a>
+                    {% endif %}
+                    <a class="p-2 btn btn-outline-danger" href="/product-delete/{{ product.pk }}/">Удалить</a>
+                </div>
+            </div>
+            <!-- Футер -->
+            <div class="card-footer text-body-secondary">
+                <b>Дата последнего изменения:</b> {{ product.updated_at|date:"d.m.Y" }}
+            </div>
+        </div>
+</div>
+
+    <!-- Правая колонка (отступ) -->
+    <div class="col-1"></div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Плагины",
+        "description": "Плагины — это дополнительные модули или расширения, которые улучшают функциональность и возможности веб-приложений и сайтов. Они обычно разрабатываются сторонними разработчиками и могут быть установлены на различные платформы для добавления новых функций или оптимизации существующих"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Телеграм Боты",
+        "description": "Бот в Telegram ― это программа, которая автоматизирует определенные задачи и взаимодействие с пользователями в мессенджере Telegram"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+        "name": "Рассылки",
+        "description": "Сервисы и инструменты для создания и автоматизации email и SMS рассылок"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "Yoast SEO",
+        "description": "Это популярный плагин для WordPress, который помогает оптимизировать ваш сайт для поисковых систем, улучшая его видимость в результатах поиска",
+        "image": "",
+        "category": 3,
+        "price": "100.00",
+        "owner": 2,
+        "created_at": "2025-01-08T20:29:19.710Z",
+        "updated_at": "2025-01-08T20:29:19.710Z",
+        "is_published": true
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Contact Form 7",
+        "description": "Этот плагин позволяет легко создавать и настраивать формы обратной связи для вашего сайта",
+        "image": "",
+        "category": 3,
+        "price": "110.00",
+        "owner": 2,
+        "created_at": "2025-01-08T20:31:08.646Z",
+        "updated_at": "2025-01-08T20:31:08.646Z",
+        "is_published": true
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "WooCommerce",
+        "description": "Это мощное расширение для создания интернет-магазина на базе WordPress, предлагающее множество функций и интеграций с платежными системами",
+        "image": "",
+        "category": 3,
+        "price": "150.00",
+        "owner": 2,
+        "created_at": "2025-01-08T20:32:16.174Z",
+        "updated_at": "2025-01-08T21:18:49.167Z",
+        "is_published": false
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+        "name": "Поздравлятор",
+        "description": "Бот, который генерирует поздравления в стихах или прозе",
+        "image": "catalog/images/bot.png",
+        "category": 4,
+        "price": "50.00",
+        "owner": 3,
+        "created_at": "2025-01-08T20:38:17.134Z",
+        "updated_at": "2025-01-08T20:38:17.134Z",
+        "is_published": true
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "name": "Сервис рассылок",
+        "description": "Удобный сервис рассылок, можно подключить к нескольким каналам. Поможем настроить",
+        "image": "catalog/images/mailing_lists.png",
+        "category": 5,
+        "price": "140.00",
+        "owner": 4,
+        "created_at": "2025-01-08T20:42:22.718Z",
+        "updated_at": "2025-01-08T20:42:22.718Z",
+        "is_published": true
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+        "name": "Информация о погоде",
+        "description": "Бот, который приносит информацию о погоде в заданное время, по выбранному городу",
+        "image": "catalog/images/bot_weather.png",
+        "category": 4,
+        "price": "10.00",
+        "owner": 3,
+        "created_at": "2025-01-08T21:38:38.123Z",
+        "updated_at": "2025-01-08T21:38:38.123Z",
+        "is_published": false
+    }
+}
+]
